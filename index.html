@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Heart</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <style>
+            body {
+                background-color: pink;
+                animation-name: background-color;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+            #heart {
+                width: 60px;
+                height: 60px;
+                background-color: red;
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                margin: auto;
+                transform: rotate(45deg);
+                animation-name: heartbeat;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+            #heart::before {
+                content: "";
+                width: 60px;
+                height: 60px;
+                background-color: red;
+                position: absolute;
+                top: 0px;
+                left: -30px;
+                border-radius: 50%;
+            }
+            #heart::after {
+                content: "";
+                width: 60px;
+                height: 60px;
+                background-color: red;
+                position: absolute;
+                top: -30px;
+                left: 0px;
+                border-radius: 50%;
+            }
+            @keyframes heartbeat {
+                0% {
+                    transform: scale(1) rotate(45deg);
+                    opacity: 0.8;
+                }
+                50% {
+                    transform: scale(1.5) rotate(45deg);
+                    opacity: 1;
+                }
+                100% {
+                    transform: scale(1) rotate(45deg);
+                    opacity: 0.8;
+                }
+            }
+
+            @keyframes background-color {
+                0% {
+                    background-color: #ffe3e8;
+                }
+                50% {
+                    background-color: pink;
+                }
+                100% {
+
+                    background-color: #ffe3e8;
+                }
+            }
+        </style>
+        <div id="heart"></div>
+    </body>
+</html>
